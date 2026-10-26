@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a0533 0%, #2c1a5c 50%, #0f3460 100%);
+    min-height: 100vh;
+    color: #fff;
+}
+
+.estrelas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 90px 40px, #fff, transparent);
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    z-index: 0;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.tela {
+    display: none;
+    padding: 20px 0;
+}
+.tela.ativa {
+    display: block;
+    animation: aparecer 0.4s ease-out;
+}
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.capa-conteudo {
+    text-align: center;
+    padding: 35px 25px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    border: 2px solid rgba(255,215,0,0.4);
+}
+.logo-emoji {
+    font-size: 3.5rem;
+    animation: flutuar 3s ease-in-out infinite;
+}
+@keyframes flutuar {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+.capa-conteudo h1 { font-size: 2rem; color: #ffd700; margin: 10px 0; }
+.capa-conteudo h2 { font-size: 1.1rem; color: #a8d8ff; margin-bottom: 15px; }
+.subtitulo { color: #ccc; line-height: 1.6; margin-bottom: 25px; }
+
+.selecao-personagens h3 { color: #ffd700; margin-bottom: 20px; }
+.lista-personagens { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+.card-personagem {
+    background: rgba(255,255,255,0.05);
+    border: 3px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 20px;
+    width: 110px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.card-personagem:hover, .card-personagem.selecionado {
+    border-color: #ffd700;
+    background: rgba(255,215,0,0.1);
+    transform: translateY(-5px);
+}
+.emoji-pers { font-size: 2.5rem; margin-bottom: 5px; }
+.nome { font-weight: bold; color: #fff; }
+.escolhido { color: #4ade80; font-weight: bold; margin: 15px 0; }
+
+.botao {
+    padding: 12px 28px;
+    font-size: 1rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.botao.principal {
+    background: linear-gradient(135deg, #ffd700, #ffb300);
+    color: #1a1a2e;
+}
+.botao.principal:hover { transform: scale(1.05); }
+.botao.voltar {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.caixa-historia {
+    background: rgba(255,255,255,0.03);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(100,181,246,0.2);
+}
+.emoji-cena { font-size: 3rem; text-align: center; margin-bottom: 10px; }
+.caixa-historia h3 { font-size: 1.3rem; color: #ffd700; margin-bottom: 12px; text-align: center; }
+.caixa-historia p { line-height: 1.7; color: #e0e0e0; }
+
+.botao-escolha {
+    width: 100%;
+    text-align: left;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    border: 2px solid rgba(174,194,255,0.3);
+    margin: 8px 0;
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.botao-escolha:hover {
+    background: rgba(100,149,237,0.25);
+    border-color: #64b5f6;
+    transform: translateX(5px);
+}
+.num-tecla {
+    display: flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px;
+    background: #ffd700; color: #000;
+    border-radius: 6px; font-weight: bold; flex-shrink: 0;
+}
+.dica { text-align: center; color: #888; font-size: 0.9rem; margin-top: 10px; }
+
+.gameover-conteudo, .vitoria-conteudo {
+    text-align: center;
+    padding: 40px 25px;
+    border-radius: 20px;
+}
+.gameover-conteudo {
+    background: rgba(139,0,0,0.1);
+    border: 2px solid rgba(255,0,0,0.4);
+}
+.emoji-gameover { font-size: 4rem; }
+.texto-gameover {
+    font-size: 2.2rem;
+    color: #ff4d4d;
+    margin: 10px 0;
+    text-shadow: 0 0 20px rgba(255,0,0,0.5);
+}
+.gameover-conteudo h2 { color: #ff8888; margin-bottom: 15px; }
+.gameover-conteudo p { color: #ccc; margin-bottom: 25px; }
+
+.caixa-codigos {
+    background: rgba(0,0,0,0.4);
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 25px;
+    border: 1px solid #444;
+}
+.caixa-codigos h4 { color: #aaa; margin-bottom: 12px; }
+.codigo-bloco {
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 8px 0;
+    text-align: left;
+}
+.codigo-bloco .etiqueta { color: #ffd700; font-weight: bold; }
+.codigo-bloco code { color: #81c784; font-family: monospace; font-size: 0.9rem; }
+
+.vitoria-conteudo {
+    background: rgba(0,100,0,0.1);
+    border: 2px solid rgba(0,255,100,0.4);
+}
+.emoji-vitoria { font-size: 4rem; margin-bottom: 15px; }
+.vitoria-conteudo h1 { font-size: 1.7rem; margin-bottom: 15px; }
+#tela-v1 h1 { color: #ffd700; }
+#tela-v2 h1 { color: #4ade80; }
+#tela-v3 h1 { color: #fbbf24; }
+.vitoria-conteudo p { color: #ccc; margin-bottom: 25px; line-height: 1.6; }
+
+@media(max-width: 500px) {
+    .cabecalho { justify-content: center; text-align: center; }
+    .card-personagem { width: 95px; padding: 15px; }
+    .emoji-pers { font-size: 2rem; }
+}
+

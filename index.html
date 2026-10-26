@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Defensores 🛡️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="estrelas"></div>
+    <div class="container">
+
+        <!-- Tela Capa -->
+        <div id="tela-capa" class="tela ativa">
+            <div class="capa-conteudo">
+                <div class="logo-emoji">🛡️📱💻</div>
+                <h1>EMOJI DEFENSORES</h1>
+                <h2>Missão: Proteger o Sistema de Instrução</h2>
+                <p class="subtitulo">O hacker ❌CORRUPT❌ está atacando! Escolha seu personagem e defenda o sistema!</p>
+                
+                <div class="selecao-personagens">
+                    <h3>👤 Escolha seu Guardião:</h3>
+                    <div class="lista-personagens">
+                        <button class="card-personagem" data-pers="😎">
+                            <div class="emoji-pers">😎</div>
+                            <div class="nome">Corajoso</div>
+                        </button>
+                        <button class="card-personagem" data-pers="🦉">
+                            <div class="emoji-pers">🦉</div>
+                            <div class="nome">Sábio</div>
+                        </button>
+                        <button class="card-personagem" data-pers="🤖">
+                            <div class="emoji-pers">🤖</div>
+                            <div class="nome">Tecnólogo</div>
+                        </button>
+                    </div>
+                </div>
+                
+                <p id="pers-escolhido" class="escolhido"></p>
+                <button id="btn-iniciar" class="botao principal" style="display:none;">🚀 Começar Missão</button>
+            </div>
+        </div>
+
+        <!-- Tela Jogo -->
+        <div id="tela-jogo" class="tela">
+            <div class="cabecalho">
+                <span>Seu Guardião: <strong id="meu-pers">😎</strong></span>
+                <span>🛡️ Integridade: <strong id="vida">100%</strong></span>
+                <button id="btn-voltar" class="botao voltar">← Voltar</button>
+            </div>
+            <div class="caixa-historia">
+                <div class="emoji-cena" id="cena-emoji">📱</div>
+                <h3 id="cena-titulo"></h3>
+                <p id="cena-texto"></p>
+            </div>
+            <div class="caixa-escolhas" id="caixa-botoes"></div>
+            <p class="dica">💡 Clique ou use teclas 1, 2, 3</p>
+        </div>
+
+        <!-- Game Over -->
+        <div id="tela-gameover" class="tela">
+            <div class="gameover-conteudo">
+                <div class="emoji-gameover">😵💀❌</div>
+                <h1 class="texto-gameover">VOCÊ FOI HACKEADO</h1>
+                <h2>— GAME OVER —</h2>
+                <p id="msg-gameover">O sistema foi invadido. Não desista!</p>
+                <div class="caixa-codigos">
+                    <h4>📂 Códigos do Projeto:</h4>
+                    <div class="codigo-bloco">
+                        <span class="etiqueta">GitHub:</span>
+                        <code>github.com/seu-usuario/emoji-defensores-jogo</code>
+                    </div>
+                    <div class="codigo-bloco">
+                        <span class="etiqueta">Arquivos:</span>
+                        <code>index.html | style.css | script.js</code>
+                    </div>
+                </div>
+                <button id="btn-reiniciar" class="botao principal">🔄 Tentar Novamente</button>
+            </div>
+        </div>
+
+        <!-- Vitórias -->
+        <div id="tela-v1" class="tela">
+            <div class="vitoria-conteudo">
+                <div class="emoji-vitoria">🎉🏆🛡️✨</div>
+                <h1>🏆 MISSÃO PERFEITA!</h1>
+                <p>Você bloqueou todos os ataques! O sistema está 100% seguro. Você é um Guardião Lendário!</p>
+                <button id="btn-novamente1" class="botao principal">🎮 Jogar Novamente</button>
+            </div>
+        </div>
+        <div id="tela-v2" class="tela">
+            <div class="vitoria-conteudo">
+                <div class="emoji-vitoria">🎉🛡️✨</div>
+                <h1>✅ SISTEMA PROTEGIDO!</h1>
+                <p>Você defendeu o sistema com sucesso! Bom trabalho, Guardião!</p>
+                <button id="btn-novamente2" class="botao principal">🎮 Jogar Novamente</button>
+            </div>
+        </div>
+        <div id="tela-v3" class="tela">
+            <div class="vitoria-conteudo">
+                <div class="emoji-vitoria">😅🛡️✨</div>
+                <h1>⚠️ MISSÃO CUMPRIDA — COM DIFICULDADES</h1>
+                <p>Conseguiu salvar o sistema, mas com perdas. Fique mais atento da próxima vez!</p>
+                <button id="btn-novamente3" class="botao principal">🎮 Tentar de Novo</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
